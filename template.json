@@ -13,7 +13,7 @@
     "source_ami": "ami-031b673f443c2172c",
     "instance_type": "t2.micro",
     "ssh_username": "ec2-user",
-    "ami_name": "My-RHEL-AMI-{{isotime | clean_ami_name}}"
+    "ami_name": "Ubuntu-AMI-{{isotime | clean_ami_name}}"
   }],
 
   "provisioners": [
