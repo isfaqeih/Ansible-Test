@@ -1,6 +1,6 @@
 ---    
   - name: Clone/pull project repo
-      git : repo={{ project_repo }} dest={{ install_root }}/{{ project_name }} accept_hostkey=yes
+      git : repo={{ project_repo }} dest={{ install_root }}/{{ project_name }} accept_hostkey=yes force=yes
       notify:
         - restart gunicorn
   
