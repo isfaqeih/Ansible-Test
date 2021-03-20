@@ -1,6 +1,4 @@
 ---
-
-  tasks:
     - name: Install system packages
       apt: pkg={{ item }} update-cache=yes
       with_items: "{{ system_packages }}"

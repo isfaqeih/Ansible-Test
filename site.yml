@@ -3,6 +3,7 @@
 - hosts: localhost
 
 - name: preparing Server with dependency
+  hosts: localhost
   vars_files:
     - group_vars/all
     - group_vars/Server
@@ -13,7 +14,7 @@
 
 
 - name: configure and deploy the webservers and application code
-  remote_user: ubuntu
+  hosts: localhost
   vars_files:
         - group_vars/all
         - group_vars/django
