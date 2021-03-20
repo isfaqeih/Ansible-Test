@@ -1,0 +1,22 @@
+---
+# This playbook deploys the whole application stack in this site.
+- hosts: all
+
+- name: preparing Server with dependency
+  vars_files:
+    - group_vars/all.yaml
+    - group_vars/Server.yaml
+  remote_user: ubuntu
+
+  roles:
+    - Server
+
+
+- name: configure and deploy the webservers and application code
+  remote_user: ubuntu
+  vars_files:
+        - group_vars/all.yaml
+        - group_vars/django.yaml
+
+  roles:
+    - Django

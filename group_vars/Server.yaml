@@ -1,0 +1,24 @@
+---
+# Variables listed here for server
+# ntp server: NIST time-d-wwv.nist.gov, Fort Collins, CO.
+
+httpd_port: 80
+ntpserver: 132.163.97.4
+repository: https://github.com/isfaqeih/test-app.git
+
+
+# Packages to be installed
+system_packages:
+
+  - git
+  - nginx
+  - gunicorn
+  - openssh-server
+  - sqlite3 
+  - sqlitebrowser
+  - python-dev
+  - python-pip
+  - python-virtualenv
+  - python3-dev 
+  - python3-pip
+  - python3-virtualenv 

@@ -1,0 +1,6 @@
+
+#Variables listed here for all
+
+httpd_port: 80
+ntpserver: 132.163.97.4
+project_repo: https://github.com/isfaqeih/test-app.git
