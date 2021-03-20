@@ -1,7 +1,7 @@
-    
-      - name: Clone/pull project repo
-        git: repo={{ project_repo }} dest={{ install_root }}/{{ project_name }} accept_hostkey=yes
-        notify:
+---    
+  - name: Clone/pull project repo
+      git : repo={{ project_repo }} dest={{ install_root }}/{{ project_name }} accept_hostkey=yes
+      notify:
         - restart gunicorn
   
 
@@ -12,14 +12,14 @@
   
 
       - name: copy nginx config
-        template: src=files/nginx.j2 dest=/etc/nginx/sites-enabled/{{ project_name }}.conf
+        template: src=nginx.j2 dest=/etc/nginx/sites-enabled/{{ project_name }}.conf
         notify:
         - restart nginx
   
 
 
       - name: remove default nginx site
-         file: path=/etc/nginx/sites-enabled/default state=absent
+        file: path=/etc/nginx/sites-enabled/default state=absent
 
       - name: django migrate
         django_manage: command=migrate app_path={{ install_root }}/{{ project_name }} pythonpath={{ pythonpath }}
@@ -30,7 +30,7 @@
   
 
       - name: copy gunicorn config
-        template: src=files/gunicorn.j2 dest=/etc/init/gunicorn.conf
+        template: src=gunicorn.j2 dest=/etc/init/gunicorn.conf
         notify:
         - restart gunicorn
   
@@ -42,13 +42,5 @@
       - name: make sure gunicorn server is running
         service: name=gunicorn state=started enabled=yes
   
-
-  handlers: 
-      - name: restart nginx
-        service: name=nginx state=restarted
-  
-
-      - name: restart gunicorn
-        service: name=gunicorn state=restarted
   
 
