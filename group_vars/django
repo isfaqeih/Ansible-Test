@@ -1,14 +1,15 @@
 # Variables listed here are applicable 
 
+project_repo: "https://github.com/isfaqeih/test-app.git"
 # a unix path-friendly name (IE, no spaces or special characters)
-project_name: helloworld
+project_name: test-app
 
 
 # the base path to install to. You should not need to change this.
 install_root: /srv
 
 # any directories that need to be added to the PYTHONPATH.
-pythonpath: "{{ install_root }}/{{ project_name }}/helloworld"
+pythonpath: "{{ install_root }}/{{ project_name }}/"
 
 # The value of your django project's STATIC_ROOT settings.
 # This will be the directory that django's `collectstatic` management command
@@ -21,7 +22,7 @@ static_root: "{{ install_root }}/{{ project_name }}/static"
 
 
 # the dns name or names (space separated) for your server
-server_name: django-hello.com www.django-hello.com
+#server_name: django-hello.com www.django-hello.com
   
 
   

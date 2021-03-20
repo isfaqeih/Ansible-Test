@@ -21,9 +21,13 @@
       - name: remove default nginx site
         file: path=/etc/nginx/sites-enabled/default state=absent
 
+      - name: Make executable
+         file: path=/srv/trydjango/manage.py mode=0777
+
       - name: django migrate
         django_manage: command=migrate app_path={{ install_root }}/{{ project_name }} pythonpath={{ pythonpath }}
   
+
 
       - name: django collectstatic
         django_manage: command=collectstatic app_path={{ install_root }}/{{ project_name }} pythonpath={{ pythonpath }}
