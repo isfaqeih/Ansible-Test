@@ -1,6 +1,6 @@
 ---
 # This playbook deploys the whole application stack in this site.
-- hosts: all
+- hosts: localhost
 
 - name: preparing Server with dependency
   vars_files:

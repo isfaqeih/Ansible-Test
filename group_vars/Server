@@ -1,12 +1,3 @@
----
-# Variables listed here for server
-# ntp server: NIST time-d-wwv.nist.gov, Fort Collins, CO.
-
-httpd_port: 80
-ntpserver: 132.163.97.4
-repository: https://github.com/isfaqeih/test-app.git
-
-
 # Packages to be installed
 system_packages:
 
