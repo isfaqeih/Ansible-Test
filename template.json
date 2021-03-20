@@ -12,7 +12,7 @@
     "region": "us-west-2",
     "source_ami": "ami-031b673f443c2172c",
     "instance_type": "t2.micro",
-    "ssh_username": "ec2-user",
+    "ssh_username": "ubuntu",
     "ami_name": "Ubuntu-AMI-{{isotime | clean_ami_name}}"
   }],
 
